@@ -80,12 +80,12 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-32 bg-primary overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 -skew-x-12 translate-x-24" />
+      <section className="relative py-24 md:py-32 bg-primary overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 md:-skew-x-12 md:translate-x-24" />
         <div className="container-custom relative z-10 text-white">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">Our <span className="text-accent">Expertise.</span></h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6">Our <span className="text-accent">Expertise.</span></h1>
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               From initial load calculations to final commissioning, Dalal M&E provides a full spectrum of mechanical and electrical engineering services.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
@@ -108,20 +108,20 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-primary mb-4">{service.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-4">{service.title}</h3>
+                    <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">{service.description}</p>
                     
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-gray-500 font-medium">
-                          <CheckCircle2 size={16} className="text-accent" />
+                        <li key={idx} className="flex items-center gap-2 text-xs md:text-sm text-gray-500 font-medium">
+                          <CheckCircle2 size={16} className="text-accent flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     
-                    <Link href="/quote" className="inline-flex items-center text-accent font-bold group/link">
+                    <Link href="/quote" className="inline-flex items-center text-accent font-bold group/link text-sm md:text-base">
                       Request Quote <ArrowRight size={18} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -135,24 +135,24 @@ export default function ServicesPage() {
       {/* Methodology Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070" className="rounded-3xl shadow-2xl" alt="Methodology" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1 px-4 md:px-0">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070" className="rounded-3xl shadow-2xl w-full" alt="Methodology" />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl font-bold text-primary mb-8">The AI-Driven Methodology</h2>
-              <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">The AI-Driven Methodology</h2>
+              <div className="space-y-6 md:space-y-8">
                 {[
                   { step: '01', title: 'Data-Centric Auditing', desc: 'We begin with high-resolution sensors and audits to capture real-time operational data.' },
                   { step: '02', title: 'Generative Design', desc: 'Our AI engines simulate thousands of design variations to find the optimal balance of cost and efficiency.' },
                   { step: '03', title: 'Precision Implementation', desc: 'Hardware is installed with surgical precision, guided by the data models created during design.' },
                   { step: '04', title: 'Iterative Optimization', desc: 'Post-installation, we continuously tune systems based on actual performance metrics.' },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-6">
-                    <div className="text-3xl font-black text-accent/20">{item.step}</div>
+                  <div key={i} className="flex gap-4 md:gap-6">
+                    <div className="text-2xl md:text-3xl font-black text-accent/20 flex-shrink-0">{item.step}</div>
                     <div>
-                      <h4 className="text-xl font-bold text-primary mb-2">{item.title}</h4>
-                      <p className="text-gray-600">{item.desc}</p>
+                      <h4 className="text-lg md:text-xl font-bold text-primary mb-2">{item.title}</h4>
+                      <p className="text-gray-600 text-sm md:text-base">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -165,16 +165,16 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="section-padding bg-slate-50">
         <div className="container-custom text-center">
-          <div className="glass-card p-12 md:p-20 rounded-[40px] border border-white">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Need a Custom Engineering Solution?</h2>
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <div className="glass-card p-8 md:p-20 rounded-[30px] md:rounded-[40px] border border-white mx-4 md:mx-0">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-6">Need a Custom Engineering Solution?</h2>
+            <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
               Tell us about your project requirements and let our AI-powered system generate a preliminary technical scope.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/quote" className="button-primary px-12 py-4">
+              <Link href="/quote" className="button-primary px-8 md:px-12 py-4 text-center">
                 Get AI Quotation
               </Link>
-              <Link href="/contact" className="button-secondary px-12 py-4">
+              <Link href="/contact" className="button-secondary px-8 md:px-12 py-4 text-center">
                 Speak to an Engineer
               </Link>
             </div>

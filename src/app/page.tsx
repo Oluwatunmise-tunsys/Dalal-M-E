@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 pb-16 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29uc3RydWN0aW9uJTIwY29tcGFueXxlbnwwfDB8MHx8fDA%3D" 
@@ -45,20 +45,20 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 backdrop-blur-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium tracking-wide uppercase">Dalal M&E Solutions</span>
+              <span className="text-xs md:text-sm font-medium tracking-wide uppercase">Dalal M&E Solutions</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-[1.1]">
               Advancing Engineering <br />
               <span className="text-accent">Through Innovation.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
               Dalal M&E delivers high-performance Mechanical and Electrical solutions tailored for industrial excellence and commercial intelligence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-5">
-              <Link href="/quote" className="button-primary group px-8 py-4 text-lg">
-                Get AI Quote <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
+              <Link href="/quote" className="button-primary group px-8 py-4 text-lg text-center sm:text-left">
+                Get AI Quote <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/services" className="button-secondary border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg">
+              <Link href="/services" className="button-secondary border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg text-center sm:text-left">
                 Explore Services
               </Link>
             </div>
@@ -67,9 +67,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-primary py-12 border-y border-white/10">
+      <section className="bg-primary py-10 md:py-12 border-y border-white/10">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
             {[
               { label: 'Projects Completed', value: '500+' },
               { label: 'Expert Engineers', value: '40+' },
@@ -77,8 +77,8 @@ export default function Home() {
               { label: 'Client Satisfaction', value: '100%' },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-3xl md:text-4xl font-bold text-accent mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-400 uppercase tracking-widest">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-1">{stat.value}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -88,10 +88,10 @@ export default function Home() {
       {/* Services Grid */}
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Core Competencies</h2>
-              <p className="text-xl text-gray-600">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">Core Competencies</h2>
+              <p className="text-lg md:text-xl text-gray-600">
                 We specialize in complex engineering challenges that require precision, innovation, and technical mastery.
               </p>
             </div>
@@ -100,13 +100,13 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
                 <div
                   key={index}
-                  className="group relative h-[400px] overflow-hidden rounded-2xl shadow-xl"
+                  className="group relative h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden rounded-2xl shadow-xl"
                 >
                   <img 
                     src={service.image} 
@@ -137,19 +137,19 @@ export default function Home() {
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative px-4 md:px-0">
               <img 
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" 
                 alt="Professional Workspace" 
-                className="rounded-2xl shadow-2xl relative z-10"
+                className="rounded-2xl shadow-2xl relative z-10 w-full"
               />
-              <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-accent/10 rounded-2xl -z-0" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 border-l-4 border-t-4 border-accent rounded-tl-2xl z-20" />
+              <div className="hidden md:block absolute -bottom-6 -right-6 w-64 h-64 bg-accent/10 rounded-2xl -z-0" />
+              <div className="hidden md:block absolute -top-6 -left-6 w-32 h-32 border-l-4 border-t-4 border-accent rounded-tl-2xl z-20" />
             </div>
 
             <div>
-              <h2 className="text-4xl font-bold text-primary mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 leading-tight">
                 Setting New Standards <br />
                 <span className="text-accent">in Engineering Excellence</span>
               </h2>
@@ -161,17 +161,17 @@ export default function Home() {
                   { title: '24/7 Monitoring', desc: 'Remote system monitoring and predictive maintenance solutions.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="mt-1">
+                    <div className="mt-1 flex-shrink-0">
                       <CheckCircle2 className="text-accent" size={24} />
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-primary">{item.title}</h4>
-                      <p className="text-gray-600">{item.desc}</p>
+                      <p className="text-gray-600 text-sm md:text-base">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="button-primary mt-10">
+              <Link href="/contact" className="button-primary mt-10 w-full sm:w-auto text-center">
                 Discuss Your Project
               </Link>
             </div>
@@ -180,44 +180,44 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10 skew-x-12 translate-x-32" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10 md:skew-x-12 md:translate-x-32" />
         
         <div className="container-custom relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
             <div className="max-w-2xl text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                 Get an Instant Project Estimate
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-lg md:text-xl text-gray-300 mb-8">
                 Our AI-powered quotation engine analyzes your requirements to provide an accurate budget and timeline in under 2 minutes.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link href="/quote" className="button-primary bg-white text-primary hover:bg-gray-100">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link href="/quote" className="button-primary bg-white text-primary hover:bg-gray-100 text-center">
                   Generate Free Quote
                 </Link>
-                <Link href="/contact" className="button-secondary border-white text-white hover:bg-white hover:text-primary">
+                <Link href="/contact" className="button-secondary border-white text-white hover:bg-white hover:text-primary text-center">
                   Speak to an Expert
                 </Link>
               </div>
             </div>
             
-            <div className="glass-card p-10 rounded-3xl max-w-md w-full border-white/10">
+            <div className="glass-card p-6 sm:p-10 rounded-3xl max-w-md w-full border-white/10 mx-auto lg:mx-0">
               <div className="text-primary mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white">
                   <ShieldCheck size={24} />
                 </div>
-                <span className="font-bold text-xl">Smart Assurance</span>
+                <span className="font-bold text-lg md:text-xl">Smart Assurance</span>
               </div>
-              <p className="text-gray-600 mb-6 italic">
+              <p className="text-gray-600 mb-6 italic text-sm md:text-base">
                 "Dalal M&E transformed our facility's lighting and HVAC efficiency. Their AI-driven approach was noticeably more precise than traditional contractors."
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200" />
                 <div>
-                  <div className="font-bold text-primary">Eng. Robert Smith</div>
-                  <div className="text-sm text-gray-500">Facility Director, Global Logistics</div>
+                  <div className="font-bold text-primary text-sm md:text-base">Eng. Robert Smith</div>
+                  <div className="text-xs md:text-sm text-gray-500">Facility Director, Global Logistics</div>
                 </div>
               </div>
             </div>

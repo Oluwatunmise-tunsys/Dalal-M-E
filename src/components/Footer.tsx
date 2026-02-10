@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-blue-400 to-accent" />
       
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
           <div className="col-span-1 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-8 group">
+            <Link href="/" className="flex items-center gap-2 md:gap-3 mb-8 group">
               <div className="relative w-10 h-10 overflow-hidden rounded-lg">
                 <Image 
                   src="https://tse3.mm.bing.net/th/id/OIP.lhu9SGD-9FWwgnfqzMSdGwHaGP?rs=1&pid=ImgDetMain&o=7&rm=3"
@@ -20,15 +20,15 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-black tracking-tighter leading-none text-white">
+                <span className="text-lg font-black tracking-tighter leading-none text-white uppercase">
                   DALAL <span className="text-accent">M&E</span>
                 </span>
                 <span className="text-[8px] font-bold uppercase tracking-[0.2em] mt-1 text-white/50">
-                  Engineering Services
+                  Engineering | Electrical Services
                 </span>
               </div>
             </Link>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
               Providing premium mechanical and electrical engineering solutions with a commitment to innovation and technical excellence.
             </p>
             <div className="flex gap-4">

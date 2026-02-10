@@ -3,7 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['tse3.mm.bing.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'tse3.mm.bing.net',
+      },
+    ],
   },
 }
 

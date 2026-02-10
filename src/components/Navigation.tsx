@@ -33,8 +33,8 @@ export default function Navigation() {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
               <Image 
                 src="https://tse3.mm.bing.net/th/id/OIP.lhu9SGD-9FWwgnfqzMSdGwHaGP?rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt="Dalal M&E Logo"
@@ -44,10 +44,10 @@ export default function Navigation() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-black tracking-tighter leading-none ${scrolled ? 'text-primary' : 'text-white'}`}>
+              <span className={`text-lg md:text-xl font-black tracking-tighter leading-none ${scrolled ? 'text-primary' : 'text-white'}`}>
                 DALAL <span className="text-accent">M&E</span>
               </span>
-              <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mt-1 ${scrolled ? 'text-gray-500' : 'text-white/60'}`}>
+              <span className={`text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] mt-1 ${scrolled ? 'text-gray-500' : 'text-white/60'}`}>
                 Engineering | Electrical Services
               </span>
             </div>
@@ -87,16 +87,17 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden absolute left-0 w-full bg-white shadow-2xl transition-all duration-300 overflow-hidden ${
-            isOpen ? 'top-full opacity-100 max-h-[500px] border-t' : 'top-[120%] opacity-0 max-h-0'
+          className={`md:hidden absolute left-0 w-full bg-white shadow-2xl transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen ? 'top-full opacity-100 translate-y-0 border-t' : 'top-full opacity-0 -translate-y-4 pointer-events-none'
           }`}
+          style={{ maxHeight: isOpen ? '100vh' : '0' }}
         >
-          <div className="p-6 space-y-4">
+          <div className="p-6 space-y-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-lg font-bold text-primary hover:text-accent py-2 border-b border-gray-50"
+                className="block text-lg font-bold text-primary hover:text-accent py-3 border-b border-gray-50 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -104,7 +105,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/quote"
-              className="flex items-center justify-center w-full button-primary mt-6"
+              className="flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-xl mt-6 shadow-lg shadow-accent/20"
               onClick={() => setIsOpen(false)}
             >
               Get AI Quote <ArrowRight className="ml-2" size={18} />
